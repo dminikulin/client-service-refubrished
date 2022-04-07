@@ -22,6 +22,11 @@ public class Phone {
     @JoinColumn(name = "client_id")
     private Client client;
 
+    public Phone(Long id, String phone) {
+        this.id = id;
+        this.phone = phone;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
