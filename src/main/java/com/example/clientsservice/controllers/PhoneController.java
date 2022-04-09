@@ -24,7 +24,8 @@ public class PhoneController {
         BootstrapManager.setBootstrapHead(model);
         List<Phone> phones = phoneService.findAll();
         model.addAttribute("phones", phones);
-        return "ph  one";
+        if(phones.isEmpty()) model.addAttribute("no-phones", "");
+        return "phone";
     }
 
     @PostMapping("add_phone")

@@ -5,10 +5,13 @@
     <title>Spring project nobody cares about - Clients</title>
     {{{bootstrapHead}}}
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="mustache.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
 <div class="form">
-    <form method="post" action="add_client">
+    <form method="post" id="client_form">
         <input type="text" placeholder="surname" name="surname" value="S">
         <input type="text" placeholder="name" name="name" value="N">
         <input type="text" placeholder="patronymic" name="patronymic" value="P">
@@ -19,11 +22,20 @@
             <option value="MALE">MALE</option>
             <option value="FEMALE">FEMALE</option>
         </select>
-        <input type="submit" value="ADD">
+        <input type="submit" value="ADD" id="load_button">
     </form>
 </div>
+<div class="load">
+<!--    <form method="post" action="load_clients">-->
+<!--        <input type="submit" value="LOAD">-->
+<!--    </form>-->
+    <div id="output"></div>
+</div>
 <div class="table">
-{{#clients}}
+    {{#no-clients}}
+        <div class="alert">No clients</div>
+    {{/no-clients}}
+    {{^no-clients}}
         <table>
         <tr>
             <th>Id</th>
@@ -45,14 +57,10 @@
                 <td>{{gender}}</td>
             </tr>
         {{/clients}}
-</table>
-{{/clients}}
-{{^clients}}
-    <div class="alert">No clients</div>
-{{/clients}}
-    <a href="/phones">Phones</a>
-    <br>
-    <a href="/accounts">Accounts</a>
+        </table>
+    {{/no-clients}}
 </div>
+<a href="/phones">Phones</a>
+<a href="/accounts">Accounts</a>
 </body>
 </html>

@@ -27,6 +27,7 @@ public class MainController {
         BootstrapManager.setBootstrapHead(model);
         List<Client> clients = clientService.findAll();
         model.addAttribute("clients", clients);
+        if(clients.isEmpty()) model.addAttribute("no-clients", "");
         return "main";
     }
 

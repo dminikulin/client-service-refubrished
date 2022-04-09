@@ -24,6 +24,7 @@ public class AccountController {
         BootstrapManager.setBootstrapHead(model);
         List<Account> accounts = accountService.findAll();
         model.addAttribute("accounts", accounts);
+        if(accounts.isEmpty()) model.addAttribute("no-accounts", "");
         return "account";
     }
 

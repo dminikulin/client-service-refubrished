@@ -14,7 +14,10 @@
     </form>
 </div>
 <div class="table">
-{{#phones}}
+    {{#no-phones}}
+        <div class="alert">No phones</div>
+    {{/no-phones}}
+{{^no-phones}}
     <table>
         <tr>
             <th>ID</th>
@@ -27,10 +30,7 @@
             </tr>
         {{/phones}}
     </table>
-{{/phones}}
-{{^phones}}
-    <div class="alert">No phones</div>
-{{/phones}}
+{{/no-phones}}
     <a href="/main">Clients</a>
 </div>
 </body>

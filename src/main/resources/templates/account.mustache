@@ -12,25 +12,26 @@
         <input type="text" placeholder="amount" name="amount" value="1000">
         <input type="submit" value="ADD">
     </form>
+
 </div>
 <div class="table">
-{{#accounts}}
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Amount</th>
-        </tr>
-        {{#accounts}}
+    {{#no-accounts}}
+        <div class="alert">No accounts</div>
+    {{/no-accounts}}
+    {{^no-accounts}}
+        <table>
             <tr>
-                <td>{{id}}</td>
-                <td>{{amount}}</td>
+                <th>ID</th>
+                <th>Amount</th>
             </tr>
-        {{/accounts}}
-    </table>
-{{/accounts}}
-{{^accounts}}
-    <div class="alert">No accounts</div>
-{{/accounts}}
+            {{#accounts}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{amount}}</td>
+                </tr>
+            {{/accounts}}
+        </table>
+    {{/no-accounts}}
     <a href="/main">Clients</a>
 </div>
 </body>

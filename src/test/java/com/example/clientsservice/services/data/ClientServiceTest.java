@@ -8,6 +8,7 @@ import com.example.clientsservice.services.data.qualifiers.ClientServiceQualifie
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -88,30 +89,6 @@ public class ClientServiceTest {
         phoneRepository.saveAll(Arrays.asList(p1, p2));
     }
 
-    @Test
-    void saveClientsAccounts(){
-        List<Client> clients = generateClients(2);
-        clients = clientService.saveAll(clients);
-        List<Account> accounts = Arrays.asList(
-                new Account(0L, 1000),
-                new Account(0L, 1000)
-        );
-        accounts = accountService.saveAll(accounts);
-        for(Client client : clients){
-            for(Account account : accounts){
-                if(client.getAccounts() == null){
-                    client.setAccounts(new HashSet<>());
-                }
-                if(account.getClients() == null){
-                    account.setClients(new HashSet<>());
-                }
-                client.getAccounts().add(account);
-                account.getClients().add(client);
-            }
-        }
-//        clients.forEach(client -> System.err.println(client + " " + client.getAccounts()));
-        clientService.saveAll(clients);
-    }
 }
 
 
