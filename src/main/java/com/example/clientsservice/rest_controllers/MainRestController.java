@@ -19,7 +19,7 @@ public class MainRestController {
     @ClientServiceQualifier
     private ClientService clientService;
 
-    @PostMapping("/rest/client-form")
+    @PostMapping("/rest/clientForm")
     public ResponseEntity<?> clientForm(@RequestBody Client client){
         System.err.println("user = " + client);
         clientService.save(client);

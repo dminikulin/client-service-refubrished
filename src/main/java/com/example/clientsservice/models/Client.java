@@ -1,5 +1,6 @@
 package com.example.clientsservice.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,7 @@ public class Client {
     @Column(nullable = false, length = 50)
     private String email;
     @Column
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="dd.MM.yyyy")
     private LocalDate birthDate;
     @Column
     private Gender gender;

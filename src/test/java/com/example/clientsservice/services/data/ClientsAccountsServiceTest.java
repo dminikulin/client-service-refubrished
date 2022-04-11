@@ -3,7 +3,10 @@ package com.example.clientsservice.services.data;
 import com.example.clientsservice.models.Account;
 import com.example.clientsservice.models.Client;
 import com.example.clientsservice.services.data.qualifiers.ClientServiceQualifier;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +16,7 @@ import java.util.*;
 
 @Transactional
 @SpringBootTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ClientsAccountsServiceTest {
     @Autowired
     @ClientServiceQualifier
@@ -21,6 +25,7 @@ public class ClientsAccountsServiceTest {
     private AccountService accountService;
 
     @Transactional
+    @Order(1)
     @Test
     void saveClientsAccounts(){
         List<Client> clients = generateClients(2);
@@ -96,5 +101,12 @@ public class ClientsAccountsServiceTest {
             ));
         }
         return clients;
+    }
+
+    @Order(2)
+    @Test
+    void deleteAccountsOfClient(){
+        List<Client> clients = clientService.findAll();
+
     }
 }

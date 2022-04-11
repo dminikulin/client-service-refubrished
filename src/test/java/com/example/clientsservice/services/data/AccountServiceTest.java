@@ -32,8 +32,8 @@ class AccountServiceTest {
         Assertions.assertNotNull(accountService.findByID(1L));
     }
 
-//    @Test
-    void delete(){
-
+    @Test
+    void deleteById(){
+        accountService.deleteById(1L);
     }
 }

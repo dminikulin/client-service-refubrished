@@ -22,7 +22,7 @@ function ajaxSubmitForm(){
                 'clients': clients
             }
             const html=`
-                <table>
+                <table class="table">
                 {{#clients}}
                 <tr>
                     <td>{{id}}</td>

@@ -22,7 +22,7 @@ public class Account {
     private Long id;
     @Column(nullable = false)
     private int amount;
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "accounts")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "accounts", cascade = CascadeType.ALL)
     private Set<Client> clients;
 
     public Account(Long id, int amount) {
