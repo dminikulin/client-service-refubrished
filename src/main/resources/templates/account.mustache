@@ -2,37 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Spring project nobody cares about - Accounts</title>
+    <title>ClientService - Accounts</title>
     {{{bootstrapHead}}}
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/mustache.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/account_jquery.js"></script>
 </head>
 <body>
 <div class="form">
-    <form method="post" action="add_account">
+    <form method="post" id="accountForm">
         <input type="text" placeholder="amount" name="amount" value="1000">
-        <input type="submit" value="ADD">
+        <input type="submit" value="ADD" id="loadButton">
     </form>
 
 </div>
-<div class="table">
-    {{#no-accounts}}
-        <div class="alert">No accounts</div>
-    {{/no-accounts}}
-    {{^no-accounts}}
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Amount</th>
-            </tr>
-            {{#accounts}}
-                <tr>
-                    <td>{{id}}</td>
-                    <td>{{amount}}</td>
-                </tr>
-            {{/accounts}}
-        </table>
-    {{/no-accounts}}
+<div class="load"></div>
+<div id="output"></div>
+<!--<div class="table">-->
+<!--    {{#no-accounts}}-->
+<!--        <div class="alert">No accounts</div>-->
+<!--    {{/no-accounts}}-->
+<!--    {{^no-accounts}}-->
+<!--        <table>-->
+<!--            <tr>-->
+<!--                <th>ID</th>-->
+<!--                <th>Amount</th>-->
+<!--            </tr>-->
+<!--            {{#accounts}}-->
+<!--                <tr>-->
+<!--                    <td>{{id}}</td>-->
+<!--                    <td>{{amount}}</td>-->
+<!--                </tr>-->
+<!--            {{/accounts}}-->
+<!--        </table>-->
+<!--    {{/no-accounts}}-->
+<!--</div>-->
     <a href="/main">Clients</a>
-</div>
 </body>
 </html>

@@ -1,0 +1,23 @@
+body{
+    font-family: "Trebuchet MS";
+}
+input{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 6px 4px;
+    margin: 10px;
+}
+#login_button{
+    background-color: wheat;
+}
+#cancel_button{
+    background-color: crimson;
+}
+#login_button:hover{
+    background-color: wheat;
+    filter: invert(1);
+}
+#cancel_button:hover{
+    background-color: crimson;
+    filter: invert(1);
+}

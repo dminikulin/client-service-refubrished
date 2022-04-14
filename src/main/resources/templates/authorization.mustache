@@ -2,23 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ClientService - authorization</title>
+    <link href="/authorize_style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<nav class="navigation">
+<!--<nav class="navigation">
     <ul>
         <li><a href="main">Main</a></li>
         <li><a href="account">Accounts</a></li>
         <li><a href="client">Clients</a></li>
         <li><a href="phone">Phones</a></li>
     </ul>
-</nav>
+</nav>-->
 <body>
     <form method="post" action="./authorization">
         <div><label><input type="text" name="login" placeholder="login"></label></div>
         <div><label><input type="password" name="password" placeholder="password"></label></div>
 <!--        <input type="hidden" name="_csrf" value="{_crsf.token}}">-->
-        <input type="button" value="Cancel">
-        <input type="submit" value="Login">
+        <input type="button" value="Cancel" id="cancel_button">
+        <input type="submit" value="Login" id="login_button">
     </form>
 </body>
 </html>

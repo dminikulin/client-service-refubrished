@@ -8,12 +8,14 @@
 </head>
 <body>
 <div class="form">
-    <form method="post" action="add_phone">
+    <form method="post" id="phoneForm">
         <input type="text" placeholder="phone" name="phone" value="+380991234567">
-        <input type="submit" value="ADD">
+        <input type="submit" value="ADD" id="loadButton">
     </form>
 </div>
-<div class="table">
+<div class="load"></div>
+<div id="output"></div>
+<!--<div class="table">
     {{#no-phones}}
         <div class="alert">No phones</div>
     {{/no-phones}}
@@ -31,7 +33,7 @@
         {{/phones}}
     </table>
 {{/no-phones}}
+</div>-->
     <a href="/main">Clients</a>
-</div>
 </body>
 </html>
