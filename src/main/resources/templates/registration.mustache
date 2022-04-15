@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {{{bootstrap}}}
 </head>
 <body>
-<nav>
-    <ul>
-        <li><a href="authorization">Authorize</a></li>
+<nav class="navigation">
+    <ul class="list-group">
+        <li class="list-group-item"><a href="main">Main</a></li>
+        <li class="list-group-item"><a href="registration">Register</a></li>
+        <li class="list-group-item"><a href="account">Accounts</a></li>
+        <li class="list-group-item"><a href="client">Clients</a></li>
+        <li class="list-group-item"><a href="phone">Phones</a></li>
+        <li class="list-group-item"><a href="error">Error</a></li>
+        <li class="list-group-item"><a href="logout">Logout</a></li>
     </ul>
 </nav>
 <div>
     <form method="post" action="register">
         <div><label><input type="text" name="login" placeholder="login"></label></div>
-        <div><label><input type="password" name="password" placeholder="password"></label></div>
         <div><label><input type="email" name="email" placeholder="email"></label></div>
-        <input type="hidden" nam="_crsf" value="{{_crsf.token}}">
+        <div><label><input type="password" name="password" placeholder="password" value="a@m.com"></label></div>
+<!--        <input type="hidden" nam="_crsf" value="{_crsf.token}}">-->
         <input type="button" value="Cancel">
         <input type="submit" value="Register">
     </form>

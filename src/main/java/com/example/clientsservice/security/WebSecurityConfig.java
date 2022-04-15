@@ -34,12 +34,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests().antMatchers("/registration", "/authorization").permitAll()
-                .antMatchers("/", "/main").hasAnyAuthority(USER.name(), ADMIN.name())
+//        http.csrf().disable();
+        /*http.csrf().disable()
+                .authorizeRequests().antMatchers("/error", "/registration", "/authorization").permitAll()
+                .antMatchers("/", "main", "/cleints").hasAnyAuthority(USER.name(), ADMIN.name())
                 .antMatchers("/users").hasAnyAuthority(ADMIN.name())
+//                .and()
+//                .formLogin().loginPage("/authorization").permitAll()
                 .and()
-                .formLogin().loginPage("/authorization").permitAll()
-                .and()
-                .logout().logoutUrl("/j_spring_security_logout").logoutSuccessUrl("/authorization");
+                .logout().logoutUrl("/j_spring_security_logout").logoutSuccessUrl("/authorization");*/
+
     }
 }
